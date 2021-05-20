@@ -26,21 +26,21 @@
                 <div class="col-sm-6" style="text-align: center;">
                     <div class="box_new">
                         <h6>New Confirmed Cases</h6>
-                        <span class="count_text">{{global_data.NewConfirmed}}</span>
+                        <span class="count_text">{{global_data.NewConfirmed | number}}</span>
                     </div>
                     <div class="box_new_deaths">
                         <h6>New Deaths</h6>
-                        <span class="count_text">{{global_data.NewDeaths}}</span>
+                        <span class="count_text">{{global_data.NewDeaths | number}}</span>
                     </div>
                 </div>
                 <div class="col-sm-6" style="text-align: center;">
                     <div class="box_total">
                         <h6>Total Confirmed Cases</h6>
-                        <span class="count_text">{{global_data.TotalConfirmed}}</span>
+                        <span class="count_text">{{global_data.TotalConfirmed | number}}</span>
                     </div>
                     <div class="box_total_deaths">
                         <h6>Total Deaths</h6>
-                        <span class="count_text">{{global_data.TotalDeaths}}</span>
+                        <span class="count_text">{{global_data.TotalDeaths | number}}</span>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="col-sm-12" style="text-align: center;">
                     <div class="box_total_recoverd">
                         <h6>Total Recovered</h6>
-                        <span class="count_text">{{global_data.TotalRecovered}}</span>
+                        <span class="count_text">{{global_data.TotalRecovered | number}}</span>
                     </div>
                 </div>
             </div>
