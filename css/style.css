@@ -1,0 +1,51 @@
+.box_new{
+    background-color: #fc2e17;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+.box_new_deaths{
+    background-color: #c71202;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+.box_total_deaths{
+    background-color: #ff6457;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+.box_total_recoverd{
+    background-color: #30baa5;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+.box_total{
+    background-color: #ff8f57;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    color: white;
+}
+.count_text{
+    font-size: 2em;
+}
+
+.page_title{
+    margin-top: 10px;
+    padding: 5px;
+    /*background-color: rgb(245, 201, 198);*/
+}
+
+.title{
+    color: blue;
+    font-weight: bold;
+}

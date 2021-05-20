@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" style="text-align: center;">
+                    <h4 class="page_title">COVID-19 CORONAVIRUS PANDEMIC</h4>
+                    <h2 class="title">CLOBAL CASES</h2>
+                    <p> <small>Last updated : {{global_data.Date}}</small> </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" style="text-align: center;">
+                    <div class="box_new">
+                        <h6>New Confirmed Cases</h6>
+                        <span class="count_text">{{global_data.NewConfirmed}}</span>
+                    </div>
+                    <div class="box_new_deaths">
+                        <h6>New Deaths</h6>
+                        <span class="count_text">{{global_data.NewDeaths}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="text-align: center;">
+                    <div class="box_total">
+                        <h6>Total Confirmed Cases</h6>
+                        <span class="count_text">{{global_data.TotalConfirmed}}</span>
+                    </div>
+                    <div class="box_total_deaths">
+                        <h6>Total Deaths</h6>
+                        <span class="count_text">{{global_data.TotalDeaths}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="text-align: center;">
+                    <div class="box_total_recoverd">
+                        <h6>Total Recovered</h6>
+                        <span class="count_text">{{global_data.TotalRecovered}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $http) {
+            $http({
+                method: "GET",
+                url: "https://api.covid19api.com/summary"
+            }).then(function mySuccess(response) {
+                $scope.country_data = response.data.Countries;
+                $scope.global_data = response.data.Global;
+            }, function myError(response) {
+                $scope.country_data = response.statusText;
+            });
+            $scope.name = "ii";
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!-- <img src="./images/covid_banner_image.jpg" alt="image" class="img-responsive" width="100%" height="auto">-->
